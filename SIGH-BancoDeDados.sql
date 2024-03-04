@@ -66,8 +66,8 @@ CREATE TABLE IF NOT EXISTS   `necessidades_especiais` (
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS   `hospedagens` (
   `id_hospedagem` INT NOT NULL,
-  `data_saida` DATETIME NULL,
-  `data_entrada` DATETIME NOT NULL,
+  `data_entrada` DATE NOT NULL,
+  `data_saida` DATE NULL,
   PRIMARY KEY (`id_hospedagem`));
 
 
@@ -121,7 +121,8 @@ CREATE TABLE IF NOT EXISTS   `departamentos` (
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS   `pedidos` (
   `id_pedidos` INT NOT NULL,
-  `data_horario` DATETIME NOT NULL,
+  `data` DATE NOT NULL,
+  `horario` TIME NOT NULL,
   `descricao` VARCHAR(45) NULL,
   `feito` TINYINT NULL,
   `id_hospedagem` INT NOT NULL,
@@ -224,26 +225,26 @@ insert into enderecos (id_endereco, estado, cidade, endereco, complemento, numer
 --------------------------------------------------------------------------------------------------------------------
 
 -- inserts hospedes
-insert into hospedes (id_hospede, primeiro_nome, sobrenome, nome_social, genero, data_nascimento, nacionalidade, cpf, passaporte, email, telefone, id_endereco, id_responsavel) values (1, 'Beee', 'Wettter', null, 'Female', '2022-11-10', 'United states', null, 'us038789', 'pwetter0@irs.gov', 477748784, 321, null);
-insert into hospedes (id_hospede, primeiro_nome, sobrenome, nome_social, genero, data_nascimento, nacionalidade, cpf, passaporte, email, telefone, id_endereco, id_responsavel) values (2, 'Josefina', 'Canby', null,'Genderfluid', '2023-02-25', 'Brazil', 875492836, 'ws637030', 'wcanby1@exblog.jp', 085921159, 716, null);
-insert into hospedes (id_hospede, primeiro_nome, sobrenome, nome_social, genero, data_nascimento, nacionalidade, cpf, passaporte, email, telefone, id_endereco, id_responsavel) values (3, 'Addie', 'Garretts', 'Del', 'Female', '2023-01-14', 'Canada', null, 'hg403564', 'dgarretts2@vk.com', 732425848, 859, 1);
-insert into hospedes (id_hospede, primeiro_nome, sobrenome, nome_social, genero, data_nascimento, nacionalidade, cpf, passaporte, email, telefone, id_endereco, id_responsavel) values (4, 'Hesthher', 'Meletti', null, 'Genderqueer', '2023-02-08', 'Dominican Republic', null, 'kl267763', 'gmeletti3@indiatimes.com', 368262143, 756, 2);
-insert into hospedes (id_hospede, primeiro_nome, sobrenome, nome_social, genero, data_nascimento, nacionalidade, cpf, passaporte, email, telefone, id_endereco, id_responsavel) values (5, 'Aldwin', 'Peltzer', null, 'Male', '2023-05-07', 'Canada', null, 'ki635763', 'apeltzer4@ebay.com', 489161905, 117, null);
-insert into hospedes (id_hospede, primeiro_nome, sobrenome, nome_social, genero, data_nascimento, nacionalidade, cpf, passaporte, email, telefone, id_endereco, id_responsavel) values (6, 'Israel', 'Trotman', null, 'Genderfluid', '2023-05-02', 'United States', null, 'lo316878', 'jtrotman5@mlb.com', 450432754, 710, 5);
-insert into hospedes (id_hospede, primeiro_nome, sobrenome, nome_social, genero, data_nascimento, nacionalidade, cpf, passaporte, email, telefone, id_endereco, id_responsavel) values (7, 'Fredra', 'Kliemann', null, 'Female', '2023-04-24', 'Brazil', 581063453, null, 'lkliemann6@sun.com', 189156511, 937, null);
-insert into hospedes (id_hospede, primeiro_nome, sobrenome, nome_social, genero, data_nascimento, nacionalidade, cpf, passaporte, email, telefone, id_endereco, id_responsavel) values (8, 'Zitella', 'Masarrat', null, 'Female', '2022-09-12', 'Brazil', 511874202, 'mk667060', 'smasarrat7@umich.edu', 891477005, 677, null);
+insert into hospedes (id_hospede, primeiro_nome, sobrenome, nome_social, genero, data_nascimento, nacionalidade, cpf, passaporte, email, telefone, id_endereco, id_responsavel) values (1, 'Beee', 'Wettter', null, 'Female', '2002-11-10', 'United states', null, 'us038789', 'pwetter0@irs.gov', 477748784, 321, null);
+insert into hospedes (id_hospede, primeiro_nome, sobrenome, nome_social, genero, data_nascimento, nacionalidade, cpf, passaporte, email, telefone, id_endereco, id_responsavel) values (2, 'Josefina', 'Canby', null,'Genderfluid', '2003-02-25', 'Brazil', 875492836, 'ws637030', 'wcanby1@exblog.jp', 085921159, 716, null);
+insert into hospedes (id_hospede, primeiro_nome, sobrenome, nome_social, genero, data_nascimento, nacionalidade, cpf, passaporte, email, telefone, id_endereco, id_responsavel) values (3, 'Addie', 'Garretts', 'Del', 'Female', '2004-01-14', 'Canada', null, 'hg403564', 'dgarretts2@vk.com', 732425848, 859, null);
+insert into hospedes (id_hospede, primeiro_nome, sobrenome, nome_social, genero, data_nascimento, nacionalidade, cpf, passaporte, email, telefone, id_endereco, id_responsavel) values (4, 'Hesthher', 'Meletti', null, 'Genderqueer', '2003-02-08', 'Dominican Republic', null, 'kl267763', 'gmeletti3@indiatimes.com', 368262143, 756, null);
+insert into hospedes (id_hospede, primeiro_nome, sobrenome, nome_social, genero, data_nascimento, nacionalidade, cpf, passaporte, email, telefone, id_endereco, id_responsavel) values (5, 'Aldwin', 'Peltzer', null, 'Male', '2003-05-07', 'Canada', null, 'ki635763', 'apeltzer4@ebay.com', 489161905, 117, null);
+insert into hospedes (id_hospede, primeiro_nome, sobrenome, nome_social, genero, data_nascimento, nacionalidade, cpf, passaporte, email, telefone, id_endereco, id_responsavel) values (6, 'Israel', 'Trotman', null, 'Genderfluid', '2003-05-02', 'United States', null, 'lo316878', 'jtrotman5@mlb.com', 450432754, 710, null);
+insert into hospedes (id_hospede, primeiro_nome, sobrenome, nome_social, genero, data_nascimento, nacionalidade, cpf, passaporte, email, telefone, id_endereco, id_responsavel) values (7, 'Fredra', 'Kliemann', null, 'Female', '2023-04-24', 'Brazil', 581063453, null, 'lkliemann6@sun.com', 189156511, 937, 3);
+insert into hospedes (id_hospede, primeiro_nome, sobrenome, nome_social, genero, data_nascimento, nacionalidade, cpf, passaporte, email, telefone, id_endereco, id_responsavel) values (8, 'Zitella', 'Masarrat', null, 'Female', '2002-09-12', 'Brazil', 511874202, 'mk667060', 'smasarrat7@umich.edu', 891477005, 677, null);
 insert into hospedes (id_hospede, primeiro_nome, sobrenome, nome_social, genero, data_nascimento, nacionalidade, cpf, passaporte, email, telefone, id_endereco, id_responsavel) values (9, 'Byram', 'Turland', 'Georgia', 'Polygender', '2002-06-28', 'Germany', null, 'ki645682', 'gturland8@mozilla.com', 864143915, 194, null);
 insert into hospedes (id_hospede, primeiro_nome, sobrenome, nome_social, genero, data_nascimento, nacionalidade, cpf, passaporte, email, telefone, id_endereco, id_responsavel) values (10, 'Hildagard', 'Blethin', null, 'Female', '2023-02-04', 'Portugal', null, 'ol172005', 'lblethin9@bbb.org', 965583221, 779, 8);
-insert into hospedes (id_hospede, primeiro_nome, sobrenome, nome_social, genero, data_nascimento, nacionalidade, cpf, passaporte, email, telefone, id_endereco, id_responsavel) values (11, 'Berkley', 'Fishlee', null, 'Male', '2023-02-01', 'Brasil', 896846771, null, 'sfishleea@tuttocitta.it', 716970713, 911, null);
-insert into hospedes (id_hospede, primeiro_nome, sobrenome, nome_social, genero, data_nascimento, nacionalidade, cpf, passaporte, email, telefone, id_endereco, id_responsavel) values (12, 'Dukey', 'Craigs', null, 'Male', '2022-06-03', 'Brazil', 418376975, null, 'ecraigsb@pinterest.com', 329735772, 525, null);
+insert into hospedes (id_hospede, primeiro_nome, sobrenome, nome_social, genero, data_nascimento, nacionalidade, cpf, passaporte, email, telefone, id_endereco, id_responsavel) values (11, 'Berkley', 'Fishlee', null, 'Male', '2000-02-01', 'Brasil', 896846771, null, 'sfishleea@tuttocitta.it', 716970713, 911, null);
+insert into hospedes (id_hospede, primeiro_nome, sobrenome, nome_social, genero, data_nascimento, nacionalidade, cpf, passaporte, email, telefone, id_endereco, id_responsavel) values (12, 'Dukey', 'Craigs', null, 'Male', '1952-06-03', 'Brazil', 418376975, null, 'ecraigsb@pinterest.com', 329735772, 525, null);
 insert into hospedes (id_hospede, primeiro_nome, sobrenome, nome_social, genero, data_nascimento, nacionalidade, cpf, passaporte, email, telefone, id_endereco, id_responsavel) values (13, 'Carolyne', 'Hrishchenko', null, 'Female', '2023-02-12', 'Brazil', 317234416,'ji598213', 'ahrishchenkoc@hp.com', 832475583, 498, 11);
 insert into hospedes (id_hospede, primeiro_nome, sobrenome, nome_social, genero, data_nascimento, nacionalidade, cpf, passaporte, email, telefone, id_endereco, id_responsavel) values (14, 'Arabel', 'Heugle', 'Nixiie', 'Female', '2023-11-06', 'United States', null, 'ko401110', 'nheugled@sakura.ne.jp', 649333207, 892, 12);
 insert into hospedes (id_hospede, primeiro_nome, sobrenome, nome_social, genero, data_nascimento, nacionalidade, cpf, passaporte, email, telefone, id_endereco, id_responsavel) values (15, 'Kayley', 'Cawsy', null, 'Female', '2023-02-07', 'Germany', null, 'ki985030', 'acawsye@prlog.org', 288564037, 366, 12);
-insert into hospedes (id_hospede, primeiro_nome, sobrenome, nome_social, genero, data_nascimento, nacionalidade, cpf, passaporte, email, telefone, id_endereco, id_responsavel) values (16, 'Carmella', 'Houliston', null, 'Female', '2023-06-03', 'Portugal', null, 'ju270959', 'khoulistonf@foxnews.com', 121032215, 873, null);
+insert into hospedes (id_hospede, primeiro_nome, sobrenome, nome_social, genero, data_nascimento, nacionalidade, cpf, passaporte, email, telefone, id_endereco, id_responsavel) values (16, 'Carmella', 'Houliston', null, 'Female', '1958-06-03', 'Portugal', null, 'ju270959', 'khoulistonf@foxnews.com', 121032215, 873, null);
 insert into hospedes (id_hospede, primeiro_nome, sobrenome, nome_social, genero, data_nascimento, nacionalidade, cpf, passaporte, email, telefone, id_endereco, id_responsavel) values (17, 'Fabian', 'Poupard', null, 'Malee', '2023-06-03', 'Brazil', 745065736, null, 'epoooupardg@reverbnation.com', 796711112, 510, 16);
-insert into hospedes (id_hospede, primeiro_nome, sobrenome, nome_social, genero, data_nascimento, nacionalidade, cpf, passaporte, email, telefone, id_endereco, id_responsavel) values (18, 'Alexandra', 'Rochelle', null, 'Femalle', '2020-09-10', 'Uruguay', null, 'dr428661', 'crochelleh@wsj.com', 319674200, 642, null);
+insert into hospedes (id_hospede, primeiro_nome, sobrenome, nome_social, genero, data_nascimento, nacionalidade, cpf, passaporte, email, telefone, id_endereco, id_responsavel) values (18, 'Alexandra', 'Rochelle', null, 'Femalle', '1990-09-10', 'Uruguay', null, 'dr428661', 'crochelleh@wsj.com', 319674200, 642, null);
 insert into hospedes (id_hospede, primeiro_nome, sobrenome, nome_social, genero, data_nascimento, nacionalidade, cpf, passaporte, email, telefone, id_endereco, id_responsavel) values (19, 'Aundrea', 'Bonicelli', null, 'Female', '2023-12-03', 'Portugal', null, 'sw043537', 'nbonicellii@ask.com', 128297256, 324, 18);
-insert into hospedes (id_hospede, primeiro_nome, sobrenome, nome_social, genero, data_nascimento, nacionalidade, cpf, passaporte, email, telefone, id_endereco, id_responsavel) values (20, 'Quinlan', 'Tregensoe', null, 'Male', '2023-05-19', 'Brazil', 764965966, 'se327774', 'ctregensoej@mac.com', 519622918, 166, null);
+insert into hospedes (id_hospede, primeiro_nome, sobrenome, nome_social, genero, data_nascimento, nacionalidade, cpf, passaporte, email, telefone, id_endereco, id_responsavel) values (20, 'Quinlan', 'Tregensoe', null, 'Male', '1989-05-19', 'Brazil', 764965966, 'se327774', 'ctregensoej@mac.com', 519622918, 166, null);
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -272,26 +273,26 @@ insert into quartos (id_quarto , conserto, limpeza, acessibilidade, banheira, fr
 --------------------------------------------------------------------------------------------------------------------
 
 -- inserts hospedagens 
-insert into hospedagens (id_hospedagem, data_saida, data_entrada) values (60675, null, '2023-08-15');
-insert into hospedagens (id_hospedagem, data_saida, data_entrada) values (90243, '2022-03-17', '2023-03-14');
-insert into hospedagens (id_hospedagem, data_saida, data_entrada) values (43481, '2022-01-23', '2023-01-14');
-insert into hospedagens (id_hospedagem, data_saida, data_entrada) values (89929, '2022-09-30', '2022-09-28');
-insert into hospedagens (id_hospedagem, data_saida, data_entrada) values (59521, '2023-06-19', '2023-06-17');
-insert into hospedagens (id_hospedagem, data_saida, data_entrada) values (35170, '2023-08-05', '2023-08-04');
-insert into hospedagens (id_hospedagem, data_saida, data_entrada) values (33210, '2022-04-21', '2022-04-19');
-insert into hospedagens (id_hospedagem, data_saida, data_entrada) values (72549, '2022-04-18', '2023-04-16');
-insert into hospedagens (id_hospedagem, data_saida, data_entrada) values (67875, '2022-09-01', '2022-08-27');
-insert into hospedagens (id_hospedagem, data_saida, data_entrada) values (56426, '2022-12-08', '2022-12-06');
-insert into hospedagens (id_hospedagem, data_saida, data_entrada) values (10693, '2022-08-02', '2022-08-30');
-insert into hospedagens (id_hospedagem, data_saida, data_entrada) values (14828, '2023-01-05', '2022-01-03');
-insert into hospedagens (id_hospedagem, data_saida, data_entrada) values (31300, '2022-08-12', '2023-08-10');
-insert into hospedagens (id_hospedagem, data_saida, data_entrada) values (26277, '2022-10-08', '2023-10-05');
-insert into hospedagens (id_hospedagem, data_saida, data_entrada) values (14853, '2022-03-09', '2022-03-05');
-insert into hospedagens (id_hospedagem, data_saida, data_entrada) values (89355, '2022-07-25', '2022-07-21');
-insert into hospedagens (id_hospedagem, data_saida, data_entrada) values (86296, '2023-03-16', '2022-03-10');
-insert into hospedagens (id_hospedagem, data_saida, data_entrada) values (34519, '2023-02-03', '2023-02-02');
-insert into hospedagens (id_hospedagem, data_saida, data_entrada) values (30734, '2022-05-20', '2023-05-15');
-insert into hospedagens (id_hospedagem, data_saida, data_entrada) values (74872, null, '2024-02-02');
+insert into hospedagens (id_hospedagem, data_entrada, data_saida) values (60675, '2023-08-15', null);
+insert into hospedagens (id_hospedagem, data_entrada, data_saida) values (90243, '2023-03-14', '2022-03-17');
+insert into hospedagens (id_hospedagem, data_entrada, data_saida) values (43481, '2023-01-14', '2022-01-23');
+insert into hospedagens (id_hospedagem, data_entrada, data_saida) values (89929, '2022-09-28', '2022-09-30');
+insert into hospedagens (id_hospedagem, data_entrada, data_saida) values (59521, '2023-06-17', '2023-06-19');
+insert into hospedagens (id_hospedagem, data_entrada, data_saida) values (35170, '2023-08-04', '2023-08-05');
+insert into hospedagens (id_hospedagem, data_entrada, data_saida) values (33210, '2022-04-19', '2022-04-21');
+insert into hospedagens (id_hospedagem, data_entrada, data_saida) values (72549, '2023-04-16', '2022-04-18');
+insert into hospedagens (id_hospedagem, data_entrada, data_saida) values (67875, '2022-08-27', '2022-09-01');
+insert into hospedagens (id_hospedagem, data_entrada, data_saida) values (56426, '2022-12-06', '2022-12-08');
+insert into hospedagens (id_hospedagem, data_entrada, data_saida) values (10693, '2022-08-30', '2022-08-02');
+insert into hospedagens (id_hospedagem, data_entrada, data_saida) values (14828, '2022-01-03', '2023-01-05');
+insert into hospedagens (id_hospedagem, data_entrada, data_saida) values (31300, '2023-08-10', '2022-08-12');
+insert into hospedagens (id_hospedagem, data_entrada, data_saida) values (26277, '2023-10-05', '2022-10-08');
+insert into hospedagens (id_hospedagem, data_entrada, data_saida) values (14853, '2022-03-05', '2022-03-09');
+insert into hospedagens (id_hospedagem, data_entrada, data_saida) values (89355, '2022-07-21', '2022-07-25');
+insert into hospedagens (id_hospedagem, data_entrada, data_saida) values (86296, '2022-03-10', '2023-03-16');
+insert into hospedagens (id_hospedagem, data_entrada, data_saida) values (34519, '2023-02-02', '2023-02-03');
+insert into hospedagens (id_hospedagem, data_entrada, data_saida) values (30734, '2023-05-15', '2022-05-20');
+insert into hospedagens (id_hospedagem, data_entrada, data_saida) values (74872, '2024-02-02', null);
 --------------------------------------------------------------------------------------------------------------------
 
 -- inserts hospede_hospedagem
@@ -300,8 +301,8 @@ insert into hospede_hospedagem (id_hospede_hospedagem, id_hospedagem, id_hospede
 insert into hospede_hospedagem (id_hospede_hospedagem, id_hospedagem, id_hospede, id_quarto) values (3, 43481, 3, 554);
 insert into hospede_hospedagem (id_hospede_hospedagem, id_hospedagem, id_hospede, id_quarto) values (4, 89929, 4, 178);
 insert into hospede_hospedagem (id_hospede_hospedagem, id_hospedagem, id_hospede, id_quarto) values (5, 59521, 5, 869);
-insert into hospede_hospedagem (id_hospede_hospedagem, id_hospedagem, id_hospede, id_quarto) values (6, 35170, 6, 278);
-insert into hospede_hospedagem (id_hospede_hospedagem, id_hospedagem, id_hospede, id_quarto) values (7, 33210, 7, 924);
+insert into hospede_hospedagem (id_hospede_hospedagem, id_hospedagem, id_hospede, id_quarto) values (6, 35170, 6, 924);
+insert into hospede_hospedagem (id_hospede_hospedagem, id_hospedagem, id_hospede, id_quarto) values (7, 35170, 7, 924);
 insert into hospede_hospedagem (id_hospede_hospedagem, id_hospedagem, id_hospede, id_quarto) values (8, 72549, 8, 894);
 insert into hospede_hospedagem (id_hospede_hospedagem, id_hospedagem, id_hospede, id_quarto) values (9, 67875, 9, 609);
 insert into hospede_hospedagem (id_hospede_hospedagem, id_hospedagem, id_hospede, id_quarto) values (10, 56426, 10, 606);
@@ -412,26 +413,26 @@ insert into funcionarios (id_funcionario, primeiro_nome, sobrenome, nome_social,
 --------------------------------------------------------------------------------------------------------------------
 
 -- inser pedidos
-insert into pedidos (id_pedidos, data_horario, descricao, feito, id_hospedagem, id_quarto, id_departamento) values (1, '2023-04-21 11:10:14', 'Limpeza', 0, 60675, 980, 12); 
-insert into pedidos (id_pedidos, data_horario, descricao, feito, id_hospedagem, id_quarto, id_departamento) values (2, '2023-03-09 04:07:43', 'Trocar lampada', 1, 60675, 980, 13); 
-insert into pedidos (id_pedidos, data_horario, descricao, feito, id_hospedagem, id_quarto, id_departamento) values (3, '2023-09-28 13:53:43', 'Limpeza completa', 1, 74872, 533, 12); 
-insert into pedidos (id_pedidos, data_horario, descricao, feito, id_hospedagem, id_quarto, id_departamento) values (4, '2023-04-27 14:48:22', 'Toalhas extras', 0, 14828, 857, 12); 
-insert into pedidos (id_pedidos, data_horario, descricao, feito, id_hospedagem, id_quarto, id_departamento) values (5, '2023-10-28 04:02:59', 'Trocar lampadas', 1, 67875, 609, 13); 
-insert into pedidos (id_pedidos, data_horario, descricao, feito, id_hospedagem, id_quarto, id_departamento) values (6, '2023-01-29 02:53:02', 'Trocar roupa de cama', 1, 67875, 609, 12); 
-insert into pedidos (id_pedidos, data_horario, descricao, feito, id_hospedagem, id_quarto, id_departamento) values (7, '2023-03-17 02:22:44', 'Arrumar chuveiro', 1, 74872, 533, 13); 
-insert into pedidos (id_pedidos, data_horario, descricao, feito, id_hospedagem, id_quarto, id_departamento) values (8, '2023-08-25 12:01:25', 'Vazamento na pia do baheiro', 0, 31300, 610, 13); 
-insert into pedidos (id_pedidos, data_horario, descricao, feito, id_hospedagem, id_quarto, id_departamento) values (9, '2023-09-15 13:26:43', 'Limpeza', 0, 89355, 129, 12); 
-insert into pedidos (id_pedidos, data_horario, descricao, feito, id_hospedagem, id_quarto, id_departamento) values (10, '2023-01-31 13:09:37', 'Trocar roupa de cama', 1, 89929, 178, 12); 
-insert into pedidos (id_pedidos, data_horario, descricao, feito, id_hospedagem, id_quarto, id_departamento) values (11, '2023-10-24 13:29:23', 'Arrumar cama quebrada', 1, 26277, 301, 13); 
-insert into pedidos (id_pedidos, data_horario, descricao, feito, id_hospedagem, id_quarto, id_departamento) values (12, '2023-07-18 18:30:17', 'Trocas lampadas', 1, 33210, 924, 13); 
-insert into pedidos (id_pedidos, data_horario, descricao, feito, id_hospedagem, id_quarto, id_departamento) values (13, '2023-01-14 13:36:52', 'Problema no alarme de incendio', 1, 26277, 301, 13); 
-insert into pedidos (id_pedidos, data_horario, descricao, feito, id_hospedagem, id_quarto, id_departamento) values (14, '2023-09-06 14:25:35', 'Chuveiro não esquenta', 0, 89929, 178, 13); 
-insert into pedidos (id_pedidos, data_horario, descricao, feito, id_hospedagem, id_quarto, id_departamento) values (15, '2023-01-03 03:02:27', 'Limpeza', 1, 56426, 606, 12); 
-insert into pedidos (id_pedidos, data_horario, descricao, feito, id_hospedagem, id_quarto, id_departamento) values (16, '2023-10-18 11:47:07', 'Limpeza', 0, 33210, 924, 12); 
-insert into pedidos (id_pedidos, data_horario, descricao, feito, id_hospedagem, id_quarto, id_departamento) values (17, '2023-05-06 13:34:38', 'Limpeza completa', 1, 35170, 278, 12); 
-insert into pedidos (id_pedidos, data_horario, descricao, feito, id_hospedagem, id_quarto, id_departamento) values (18, '2023-07-07 13:01:37', 'Trocar toalhas e roupa de cama', 1, 34519, 685, 12); 
-insert into pedidos (id_pedidos, data_horario, descricao, feito, id_hospedagem, id_quarto, id_departamento) values (19, '2023-09-23 16:18:08', 'Porta emperrada', 1, 86296, 864, 13); 
-insert into pedidos (id_pedidos, data_horario, descricao, feito, id_hospedagem, id_quarto, id_departamento) values (20, '2023-01-30 22:43:12', 'Janela quebrada', 0, 43481, 554, 13);
+insert into pedidos (id_pedidos, data, horario, descricao, feito, id_hospedagem, id_quarto, id_departamento) values (1, '2023-04-21', '11:10:14', 'Limpeza', 0, 60675, 980, 12); 
+insert into pedidos (id_pedidos, data, horario, descricao, feito, id_hospedagem, id_quarto, id_departamento) values (2, '2023-03-09', '04:07:43', 'Trocar lampada', 1, 60675, 980, 13); 
+insert into pedidos (id_pedidos, data, horario, descricao, feito, id_hospedagem, id_quarto, id_departamento) values (3, '2023-09-28', '13:53:43', 'Limpeza completa', 1, 74872, 533, 12); 
+insert into pedidos (id_pedidos, data, horario, descricao, feito, id_hospedagem, id_quarto, id_departamento) values (4, '2023-04-27', '14:48:22', 'Toalhas extras', 0, 14828, 857, 12); 
+insert into pedidos (id_pedidos, data, horario, descricao, feito, id_hospedagem, id_quarto, id_departamento) values (5, '2023-10-28', '04:02:59', 'Trocar lampadas', 1, 90243, 378, 13); 
+insert into pedidos (id_pedidos, data, horario, descricao, feito, id_hospedagem, id_quarto, id_departamento) values (6, '2023-01-29', '02:53:02', 'Trocar roupa de cama', 1, 67875, 609, 12); 
+insert into pedidos (id_pedidos, data, horario, descricao, feito, id_hospedagem, id_quarto, id_departamento) values (7, '2023-03-17', '02:22:44', 'Arrumar chuveiro', 1, 74872, 533, 13); 
+insert into pedidos (id_pedidos, data, horario, descricao, feito, id_hospedagem, id_quarto, id_departamento) values (8, '2023-08-25', '12:01:25', 'Vazamento na pia do baheiro', 0, 31300, 610, 13); 
+insert into pedidos (id_pedidos, data, horario, descricao, feito, id_hospedagem, id_quarto, id_departamento) values (9, '2023-09-15', '13:26:43', 'Limpeza', 0, 89355, 129, 12); 
+insert into pedidos (id_pedidos, data, horario, descricao, feito, id_hospedagem, id_quarto, id_departamento) values (10, '2023-01-31', '13:09:37', 'Trocar roupa de cama', 1, 89929, 178, 12); 
+insert into pedidos (id_pedidos, data, horario, descricao, feito, id_hospedagem, id_quarto, id_departamento) values (11, '2023-10-24', '13:29:23', 'Arrumar cama quebrada', 1, 26277, 301, 13); 
+insert into pedidos (id_pedidos, data, horario, descricao, feito, id_hospedagem, id_quarto, id_departamento) values (12, '2023-07-18', '18:30:17', 'Trocas lampadas', 1, 35170, 924, 13); 
+insert into pedidos (id_pedidos, data, horario, descricao, feito, id_hospedagem, id_quarto, id_departamento) values (13, '2023-01-14', '13:36:52', 'Problema no alarme de incendio', 1, 26277, 301, 13); 
+insert into pedidos (id_pedidos, data, horario, descricao, feito, id_hospedagem, id_quarto, id_departamento) values (14, '2023-09-06', '14:25:35', 'Chuveiro não esquenta', 0, 89929, 178, 13); 
+insert into pedidos (id_pedidos, data, horario, descricao, feito, id_hospedagem, id_quarto, id_departamento) values (15, '2023-01-03', '03:02:27', 'Limpeza', 1, 56426, 606, 12); 
+insert into pedidos (id_pedidos, data, horario, descricao, feito, id_hospedagem, id_quarto, id_departamento) values (16, '2023-10-18', '11:47:07', 'Limpeza', 0, 35170, 924, 12); 
+insert into pedidos (id_pedidos, data, horario, descricao, feito, id_hospedagem, id_quarto, id_departamento) values (17, '2023-05-06', '13:34:38', 'Limpeza completa', 1, 35170, 924, 12); 
+insert into pedidos (id_pedidos, data, horario, descricao, feito, id_hospedagem, id_quarto, id_departamento) values (18, '2023-07-07', '13:01:37', 'Trocar toalhas e roupa de cama', 1, 34519, 685, 12); 
+insert into pedidos (id_pedidos, data, horario, descricao, feito, id_hospedagem, id_quarto, id_departamento) values (19, '2023-09-23', '16:18:08', 'Porta emperrada', 1, 86296, 864, 13); 
+insert into pedidos (id_pedidos, data, horario, descricao, feito, id_hospedagem, id_quarto, id_departamento) values (20, '2023-01-30', '22:43:12', 'Janela quebrada', 0, 43481, 554, 13);
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -565,7 +566,7 @@ UPDATE hospedes SET genero = 'Female', data_nascimento = '2023-02-04' WHERE id_h
 UPDATE hospedes SET primeiro_nome = 'Hesther', cpf = 036594392 WHERE id_hospede = 4;
 UPDATE hospedes SET nome_social = 'Nixie' WHERE id_hospede = 14;
 UPDATE hospedes SET data_nascimento = '2022-11-10', nacionalidade = 'United States' WHERE id_hospede = 1;
-UPDATE hospedes SET id_responsavel = 2 WHERE id_hospede = 4;
+UPDATE hospedes SET id_responsavel = 6 WHERE id_hospede = 4;
 UPDATE hospedes SET cpf = 418628632 WHERE id_hospede = 16;
 UPDATE hospedes SET nacionalidade = 'Brazil', nome_social = 'Stillmann' WHERE id_hospede = 11;
 SET SQL_SAFE_UPDATES = 1;
@@ -700,7 +701,7 @@ SET SQL_SAFE_UPDATES = 1;
 -- updates pedidos
 SET SQL_SAFE_UPDATES = 0;
 UPDATE pedidos SET id_departamento = 13 WHERE id_pedidos = 11;
-UPDATE pedidos SET data_horario = '2023-02-25 22:18:08' WHERE id_pedidos = 20;
+UPDATE pedidos SET data = '2023-02-25' WHERE id_pedidos = 20;
 UPDATE pedidos SET feito = 1 WHERE id_pedidos = 12;
 UPDATE pedidos SET descricao = 'Limpeza' WHERE id_pedidos = 1;
 UPDATE pedidos SET feito = 0 WHERE id_pedidos = 8;
@@ -709,4 +710,75 @@ UPDATE pedidos SET feito = 0 WHERE id_pedidos = 19;
 UPDATE pedidos SET feito = 1 WHERE id_pedidos = 15;
 UPDATE pedidos SET descricao = 'Trocar toalhas, roupa de cama e tapetes' WHERE id_pedidos = 18;
 UPDATE pedidos SET feito = 0 WHERE id_pedidos = 14;
+SET SQL_SAFE_UPDATES = 1;
+
+--------------------------------------------------------------------------------------------------------------------
+
+-- delete hospede_hospedagem
+SET SQL_SAFE_UPDATES = 0;
+-- DELETE FROM hospede_hospedagem WHERE id_hospede = 7;
+DELETE FROM hospede_hospedagem WHERE id_hospede = 20;
+DELETE FROM hospede_hospedagem WHERE id_hospede = 2;
+DELETE FROM hospede_hospedagem WHERE id_hospede = 7;
+DELETE FROM hospede_hospedagem WHERE id_hospede = 20;
+DELETE FROM hospede_hospedagem WHERE id_hospede = 5;
+SET SQL_SAFE_UPDATES = 1;
+
+--------------------------------------------------------------------------------------------------------------------
+
+-- delete necessidades_hospede
+SET SQL_SAFE_UPDATES = 0; 
+DELETE FROM necessidades_hospede WHERE id_hospede = 20;
+DELETE FROM necessidades_hospede WHERE id_hospede = 2;
+DELETE FROM necessidades_hospede WHERE id_hospede = 7;
+DELETE FROM necessidades_hospede WHERE id_hospede = 20;
+DELETE FROM necessidades_hospede WHERE id_hospede = 5;
+-- FROM necessidades_hospede WHERE id_necessidade_hospede = 15;
+ -- DELETE FROM necessidades_hospede WHERE id_necessidade_hospede = 19;
+SET SQL_SAFE_UPDATES = 1;
+
+--------------------------------------------------------------------------------------------------------------------
+
+-- delete pedidos
+SET SQL_SAFE_UPDATES = 0; 
+DELETE FROM pedidos WHERE id_pedidos = 1;
+DELETE FROM pedidos WHERE id_pedidos = 2;
+DELETE FROM pedidos WHERE id_pedidos = 17;
+DELETE FROM pedidos WHERE id_pedidos = 3;
+DELETE FROM pedidos WHERE id_pedidos = 7;
+DELETE FROM pedidos WHERE id_pedidos = 5;
+DELETE FROM pedidos WHERE id_pedidos = 12;
+DELETE FROM pedidos WHERE id_pedidos = 16;
+SET SQL_SAFE_UPDATES = 1;
+
+--------------------------------------------------------------------------------------------------------------------
+
+-- delete necessidades_especiais
+SET SQL_SAFE_UPDATES = 0;
+DELETE FROM necessidades_especiais WHERE id_necessidade = 10;
+DELETE FROM necessidades_especiais WHERE id_necessidade = 8;
+DELETE FROM necessidades_especiais WHERE id_necessidade = 7;
+DELETE FROM necessidades_especiais WHERE id_necessidade = 13;
+-- DELETE FROM necessidades_especiais WHERE id_necessidade = 1;
+SET SQL_SAFE_UPDATES =  1;
+
+-------------------------------------------------------------------------------------------------------------------
+
+-- delete hospedagens
+SET SQL_SAFE_UPDATES = 0; 
+DELETE FROM hospedagens WHERE id_hospedagem = 35170;
+DELETE FROM hospedagens WHERE id_hospedagem = 74872;
+DELETE FROM hospedagens WHERE id_hospedagem = 35170;
+DELETE FROM hospedagens WHERE id_hospedagem = 90243;
+DELETE FROM hospedagens WHERE id_hospedagem = 60675;
+SET SQL_SAFE_UPDATES = 1;
+
+-------------------------------------------------------------------------------------------------------------------
+
+-- delete hospedes
+SET SQL_SAFE_UPDATES = 0;
+DELETE FROM hospedes WHERE id_hospede = 7;
+DELETE FROM hospedes WHERE id_hospede = 20;
+DELETE FROM hospedes WHERE id_hospede = 2;
+DELETE FROM hospedes WHERE id_hospede = 5;
 SET SQL_SAFE_UPDATES = 1;
