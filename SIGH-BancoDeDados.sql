@@ -174,10 +174,9 @@ CREATE TABLE IF NOT EXISTS   `cargos` (
 -- Table   `usuarios_senhas`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS   `usuarios_senhas` (
-  `id_usuario` INT NOT NULL,
-  `senha` VARCHAR(45) NOT NULL,
   `usuario` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`id_usuario`),
+  `senha` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`usuario`),
   UNIQUE KEY unique_usuario(usuario));
   
 -- -----------------------------------------------------
@@ -190,11 +189,11 @@ CREATE TABLE IF NOT EXISTS   `funcionarios` (
   `nome_social` VARCHAR(45) NULL,
   `email` VARCHAR(45) NOT NULL,
   `id_cargo` INT NOT NULL,
-  `id_usuario` INT NOT NULL,
+  `usuario` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id_funcionario`),
-   CONSTRAINT `fk_id_usuario`
-    FOREIGN KEY (`id_usuario`)
-    REFERENCES   `usuarios_senhas` (`id_usuario`),
+   CONSTRAINT `fk_usuario`
+    FOREIGN KEY (`usuario`)
+    REFERENCES   `usuarios_senhas` (`usuario`),
   CONSTRAINT `fk_funcionarios_cargos1`
     FOREIGN KEY (`id_cargo`)
     REFERENCES   `cargos` (`id_cargo`)
@@ -369,26 +368,26 @@ insert into necessidades_hospede (id_necessidade_hospede, id_hospede, id_necessi
 --------------------------------------------------------------------------------------------------------------------
 
 -- inserts usuarios_senhas 
-insert into usuarios_senhas (id_usuario, senha, usuario) values (17143, 'adm', 'adm');
-insert into usuarios_senhas (id_usuario, senha, usuario) values (54005, 'bL6.?8O6"4/', 'a');
-insert into usuarios_senhas (id_usuario, senha, usuario) values (33727, 'kQ4>5ILf', 'b');
-insert into usuarios_senhas (id_usuario, senha, usuario) values (38210, 'lO0"ISW/ild', 'c');
-insert into usuarios_senhas (id_usuario, senha, usuario) values (32441, 'eZ7.v~!v', 'd');
-insert into usuarios_senhas (id_usuario, senha, usuario) values (80531, 'vN8(CQ>nFa9', 'e');
-insert into usuarios_senhas (id_usuario, senha, usuario) values (36302, 'jQ9!kAL4`d.', 'f');
-insert into usuarios_senhas (id_usuario, senha, usuario) values (52648, 'hN1)1gAq$4H', 'g');
-insert into usuarios_senhas (id_usuario, senha, usuario) values (30207, 'mE4!WaRyC@*', 'h');
-insert into usuarios_senhas (id_usuario, senha, usuario) values (39765, 'jJ1$XkFOEQ', 'i');
-insert into usuarios_senhas (id_usuario, senha, usuario) values (35799, 'rK1@&|B$M', 'j');
-insert into usuarios_senhas (id_usuario, senha, usuario) values (25904, 'cA0|y~!1Ldn@JgMK', 'k');
-insert into usuarios_senhas (id_usuario, senha, usuario) values (45481, 'zG9)fz%)x9"mRJY', 'l');
-insert into usuarios_senhas (id_usuario, senha, usuario) values (77708, 'rJ4(BI&J', 'm');
-insert into usuarios_senhas (id_usuario, senha, usuario) values (79905, 'uZ6$h+"b%x', 'n');
-insert into usuarios_senhas (id_usuario, senha, usuario) values (75458, 'lP8#(rdO59$O5', 'o');
-insert into usuarios_senhas (id_usuario, senha, usuario) values (71648, 'pP9&\KAK.>y/3eg', 'p');
-insert into usuarios_senhas (id_usuario, senha, usuario) values (92530, 'xK1+pH\4uLHt+&', 'q');
-insert into usuarios_senhas (id_usuario, senha, usuario) values (58917, 'uK2$993yYoS0l29', 'r');
-insert into usuarios_senhas (id_usuario, senha, usuario) values (94575, 'jC6,$jI%t+&', 's');
+insert into usuarios_senhas (usuario, senha) values ('adm', 'adm');
+insert into usuarios_senhas (usuario, senha) values ('a', 'bL6.?8O6"4/');
+insert into usuarios_senhas (usuario, senha) values ('b', 'kQ4>5ILf');
+insert into usuarios_senhas (usuario, senha) values ('c', 'lO0"ISW/ild');
+insert into usuarios_senhas (usuario, senha) values ('d', 'eZ7.v~!v');
+insert into usuarios_senhas (usuario, senha) values ('e', 'vN8(CQ>nFa9');
+insert into usuarios_senhas (usuario, senha) values ('f', 'jQ9!kAL4`d.');
+insert into usuarios_senhas (usuario, senha) values ('g', 'hN1)1gAq$4H');
+insert into usuarios_senhas (usuario, senha) values ('h', 'mE4!WaRyC@*');
+insert into usuarios_senhas (usuario, senha) values ('i', 'jJ1$XkFOEQ');
+insert into usuarios_senhas (usuario, senha) values ('j', 'rK1@&|B$M');
+insert into usuarios_senhas (usuario, senha) values ('k', 'cA0|y~!1Ldn@JgMK');
+insert into usuarios_senhas (usuario, senha) values ('l', 'zG9)fz%)x9"mRJY');
+insert into usuarios_senhas (usuario, senha) values ('m', 'rJ4(BI&J');
+insert into usuarios_senhas (usuario, senha) values ('n', 'uZ6$h+"b%x');
+insert into usuarios_senhas (usuario, senha) values ('o', 'lP8#(rdO59$O5');
+insert into usuarios_senhas (usuario, senha) values ('p', 'pP9&\KAK.>y/3eg');
+insert into usuarios_senhas (usuario, senha) values ('q', 'xK1+pH\4uLHt+&');
+insert into usuarios_senhas (usuario, senha) values ('r', 'uK2$993yYoS0l29');
+insert into usuarios_senhas (usuario, senha) values ('s', 'jC6,$jI%t+&');
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -406,9 +405,9 @@ insert into cargos (id_cargo, nome_cargo, id_departamento) values (144, 'Recepci
 --------------------------------------------------------------------------------------------------------------------
 
 -- inserts funcionarios
-insert into funcionarios (id_funcionario, primeiro_nome, sobrenome, nome_social, email, id_cargo, id_usuario) values (1, 'Halimeda', 'Rase', null, 'erase1@privacy.gov.au', 122, 54005);
-insert into funcionarios (id_funcionario, primeiro_nome, sobrenome, nome_social, email, id_cargo, id_usuario) values (2, 'Faina', 'Hullins', null, 'mhullins2@timesonline.co.uk', 133, 33727);
-insert into funcionarios (id_funcionario, primeiro_nome, sobrenome, nome_social, email, id_cargo, id_usuario) values (3, 'Ruthann', 'Housbie', 'Carla', 'whousbie3@senate.gov', 144, 38210);
+insert into funcionarios (id_funcionario, primeiro_nome, sobrenome, nome_social, id_cargo, usuario) values (1, 'Halimeda', 'Rase', null, 122, 'a');
+insert into funcionarios (id_funcionario, primeiro_nome, sobrenome, nome_social, id_cargo, usuario) values (2, 'Faina', 'Hullins', null, 133, 'b');
+insert into funcionarios (id_funcionario, primeiro_nome, sobrenome, nome_social, id_cargo, usuario) values (3, 'Ruthann', 'Housbie', 'Carla', 144, 'c');
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -665,16 +664,16 @@ SET SQL_SAFE_UPDATES = 1;
 
 -- updates usuarios_senhas
 SET SQL_SAFE_UPDATES = 0;
-UPDATE usuarios_senhas SET senha = 'jdl/M<jf' WHERE id_usuario = 17143;
-UPDATE usuarios_senhas SET senha = 'h46fjhwk' WHERE id_usuario = 54005;
-UPDATE usuarios_senhas SET senha = 'gdhvnetr' WHERE id_usuario = 33727;
-UPDATE usuarios_senhas SET senha = 'aj534dtr' WHERE id_usuario = 38210;
-UPDATE usuarios_senhas SET senha = 'oetdgqje' WHERE id_usuario = 32441;
-UPDATE usuarios_senhas SET senha = 'shdncgft' WHERE id_usuario = 80531;
-UPDATE usuarios_senhas SET senha = 'afdnvjgç' WHERE id_usuario = 36302;
-UPDATE usuarios_senhas SET senha = 'mcg45wge' WHERE id_usuario = 52648;
-UPDATE usuarios_senhas SET senha = 'yhwelkft' WHERE id_usuario = 30207;
-UPDATE usuarios_senhas SET senha = 'msnch39t' WHERE id_usuario = 39765; 
+UPDATE usuarios_senhas SET senha = 'jdl/M<jf' WHERE usuario = 'a';
+UPDATE usuarios_senhas SET senha = 'h46fjhwk' WHERE usuario = 'b';
+UPDATE usuarios_senhas SET senha = 'gdhvnetr' WHERE usuario = 'c';
+UPDATE usuarios_senhas SET senha = 'aj534dtr' WHERE usuario = 'd';
+UPDATE usuarios_senhas SET senha = 'oetdgqje' WHERE usuario = 'e';
+UPDATE usuarios_senhas SET senha = 'shdncgft' WHERE usuario = 'f';
+UPDATE usuarios_senhas SET senha = 'afdnvjgç' WHERE usuario = 'g';
+UPDATE usuarios_senhas SET senha = 'mcg45wge' WHERE usuario = 'h';
+UPDATE usuarios_senhas SET senha = 'yhwelkft' WHERE usuario = 'i';
+UPDATE usuarios_senhas SET senha = 'msnch39t' WHERE usuario = 'j'; 
 SET SQL_SAFE_UPDATES = 1;
 
 --------------------------------------------------------------------------------------------------------------------
@@ -691,7 +690,7 @@ SET SQL_SAFE_UPDATES = 1;
 -- updates funcionarios
 SET SQL_SAFE_UPDATES = 0;
 UPDATE funcionarios SET primeiro_nome = 'Lara' WHERE id_funcionario = 5318;
-UPDATE funcionarios SET email = 'pereira0@skyrock.com' WHERE id_funcionario = 4342;
+UPDATE funcionarios SET primeiro_nome = 'Luan' WHERE id_funcionario = 4342;
 UPDATE funcionarios SET sobrenome = 'Pereira' WHERE id_funcionario = 5324;
 UPDATE funcionarios SET primeiro_nome = 'Lorela' WHERE id_funcionario = 4546;
 SET SQL_SAFE_UPDATES = 1;
@@ -781,4 +780,24 @@ DELETE FROM hospedes WHERE id_hospede = 7;
 DELETE FROM hospedes WHERE id_hospede = 20;
 DELETE FROM hospedes WHERE id_hospede = 2;
 DELETE FROM hospedes WHERE id_hospede = 5;
+SET SQL_SAFE_UPDATES = 1;
+
+-------------------------------------------------------------------------------------------------------------------
+
+-- delete enderecos
+SET SQL_SAFE_UPDATES = 0;
+DELETE FROM enderecos WHERE id_endereco = 716;
+DELETE FROM enderecos WHERE id_endereco = 117;
+DELETE FROM enderecos WHERE id_endereco = 937;
+DELETE FROM enderecos WHERE id_endereco = 166;
+SET SQL_SAFE_UPDATES = 1;
+
+------------------------------------------------------------------------------------------------------------------
+
+-- delete quartos
+SET SQL_SAFE_UPDATES = 0;
+DELETE FROM quartos WHERE id_quarto = 924;
+DELETE FROM quartos WHERE id_quarto = 533;
+DELETE FROM quartos WHERE id_quarto = 378;
+DELETE FROM quartos WHERE id_quarto = 980;
 SET SQL_SAFE_UPDATES = 1;
