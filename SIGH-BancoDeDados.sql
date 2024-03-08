@@ -187,7 +187,6 @@ CREATE TABLE IF NOT EXISTS   `funcionarios` (
   `primeiro_nome` VARCHAR(45) NOT NULL,
   `sobrenome` VARCHAR(45) NOT NULL,
   `nome_social` VARCHAR(45) NULL,
-  `email` VARCHAR(45) NOT NULL,
   `id_cargo` INT NOT NULL,
   `usuario` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id_funcionario`),
@@ -479,7 +478,7 @@ SELECT * FROM hospedagens ORDER BY id_hospedagem;
 
 SELECT * FROM necessidades_hospede ORDER BY id_necessidade_hospede; 
 
-SELECT * FROM usuarios_senhas ORDER BY id_usuario;
+SELECT * FROM usuarios_senhas ORDER BY usuario;
 
 SELECT * FROM departamentos ORDER BY id_departamento;
 
@@ -525,11 +524,11 @@ INNER JOIN departamentos ON cargos.id_departamento = departamentos.id_departamen
 SELECT 
        funcionarios.primeiro_nome,
        funcionarios.id_cargo,
-       funcionarios.id_usuario
+       funcionarios.usuario
 FROM 
        funcionarios
 INNER JOIN cargos ON funcionarios.id_cargo = cargos.id_cargo
-INNER JOIN usuarios_senhas ON funcionarios.id_usuario = usuarios_senhas.id_usuario;
+INNER JOIN usuarios_senhas ON funcionarios.usuario = usuarios_senhas.usuario;
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -715,7 +714,6 @@ SET SQL_SAFE_UPDATES = 1;
 
 -- delete hospede_hospedagem
 SET SQL_SAFE_UPDATES = 0;
--- DELETE FROM hospede_hospedagem WHERE id_hospede = 7;
 DELETE FROM hospede_hospedagem WHERE id_hospede = 20;
 DELETE FROM hospede_hospedagem WHERE id_hospede = 2;
 DELETE FROM hospede_hospedagem WHERE id_hospede = 7;
@@ -732,8 +730,6 @@ DELETE FROM necessidades_hospede WHERE id_hospede = 2;
 DELETE FROM necessidades_hospede WHERE id_hospede = 7;
 DELETE FROM necessidades_hospede WHERE id_hospede = 20;
 DELETE FROM necessidades_hospede WHERE id_hospede = 5;
--- FROM necessidades_hospede WHERE id_necessidade_hospede = 15;
- -- DELETE FROM necessidades_hospede WHERE id_necessidade_hospede = 19;
 SET SQL_SAFE_UPDATES = 1;
 
 --------------------------------------------------------------------------------------------------------------------
@@ -758,7 +754,6 @@ DELETE FROM necessidades_especiais WHERE id_necessidade = 10;
 DELETE FROM necessidades_especiais WHERE id_necessidade = 8;
 DELETE FROM necessidades_especiais WHERE id_necessidade = 7;
 DELETE FROM necessidades_especiais WHERE id_necessidade = 13;
--- DELETE FROM necessidades_especiais WHERE id_necessidade = 1;
 SET SQL_SAFE_UPDATES =  1;
 
 -------------------------------------------------------------------------------------------------------------------
