@@ -187,16 +187,10 @@ CREATE TABLE IF NOT EXISTS   `funcionarios` (
   `primeiro_nome` VARCHAR(45) NOT NULL,
   `sobrenome` VARCHAR(45) NOT NULL,
   `nome_social` VARCHAR(45) NULL,
-  `id_cargo` INT NOT NULL,
+  `cargo` VARCHAR(45) NOT NULL,
   `usuario` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`id_funcionario`),
-   CONSTRAINT `fk_usuario`
-    FOREIGN KEY (`usuario`)
-    REFERENCES   `usuarios_senhas` (`usuario`),
-  CONSTRAINT `fk_funcionarios_cargos1`
-    FOREIGN KEY (`id_cargo`)
-    REFERENCES   `cargos` (`id_cargo`)
-    );
+  `senha` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id_funcionario`));
 
 -- inserts enderecos 
 insert into enderecos (id_endereco, estado, cidade, endereco, complemento, numero) values (321, 'Geórgia', 'San Jose', 'PO Box 40575', null, 7253);
@@ -396,17 +390,12 @@ insert into departamentos (id_departamento, nome_departamento) values (13, 'Manu
 insert into departamentos (id_departamento, nome_departamento) values (14, 'Recepção');
 
 --------------------------------------------------------------------------------------------------------------------
--- inserts cargos
-insert into cargos (id_cargo, nome_cargo, id_departamento) values (122, 'Faxineira', 12);
-insert into cargos (id_cargo, nome_cargo, id_departamento) values (133, 'Eletrecista', 13);
-insert into cargos (id_cargo, nome_cargo, id_departamento) values (144, 'Recepcionista', 14);
-
---------------------------------------------------------------------------------------------------------------------
 
 -- inserts funcionarios
-insert into funcionarios (id_funcionario, primeiro_nome, sobrenome, nome_social, id_cargo, usuario) values (1, 'Halimeda', 'Rase', null, 122, 'a');
-insert into funcionarios (id_funcionario, primeiro_nome, sobrenome, nome_social, id_cargo, usuario) values (2, 'Faina', 'Hullins', null, 133, 'b');
-insert into funcionarios (id_funcionario, primeiro_nome, sobrenome, nome_social, id_cargo, usuario) values (3, 'Ruthann', 'Housbie', 'Carla', 144, 'c');
+insert into funcionarios (id_funcionario, primeiro_nome, sobrenome, nome_social, cargo, usuario, senha) values (1, 'adm', 'adm', null, 'ADM', 'adm', 'adm');
+insert into funcionarios (id_funcionario, primeiro_nome, sobrenome, nome_social, cargo, usuario, senha) values (2, 'Halimeda', 'Rase', null, "Faxineira", 'a', 'bL6.?8O6"4/');
+insert into funcionarios (id_funcionario, primeiro_nome, sobrenome, nome_social, cargo, usuario, senha) values (3, 'Faina', 'Hullins', null, "Eletricista", 'b', 'kQ4>5ILf');
+insert into funcionarios (id_funcionario, primeiro_nome, sobrenome, nome_social, cargo, usuario, senha) values (4, 'Ruthann', 'Housbie', 'Carla', "Recepcionista", 'c', 'lO0"ISW/ild');
 
 --------------------------------------------------------------------------------------------------------------------
 
