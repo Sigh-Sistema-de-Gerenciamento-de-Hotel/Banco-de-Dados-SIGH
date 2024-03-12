@@ -360,7 +360,7 @@ insert into necessidades_hospede (id_necessidade_hospede, id_hospede, id_necessi
 
 --------------------------------------------------------------------------------------------------------------------
 
--- inserts usuarios_senhas 
+/*-- inserts usuarios_senhas 
 insert into usuarios_senhas (usuario, senha) values ('adm', 'adm');
 insert into usuarios_senhas (usuario, senha) values ('a', 'bL6.?8O6"4/');
 insert into usuarios_senhas (usuario, senha) values ('b', 'kQ4>5ILf');
@@ -380,7 +380,7 @@ insert into usuarios_senhas (usuario, senha) values ('o', 'lP8#(rdO59$O5');
 insert into usuarios_senhas (usuario, senha) values ('p', 'pP9&\KAK.>y/3eg');
 insert into usuarios_senhas (usuario, senha) values ('q', 'xK1+pH\4uLHt+&');
 insert into usuarios_senhas (usuario, senha) values ('r', 'uK2$993yYoS0l29');
-insert into usuarios_senhas (usuario, senha) values ('s', 'jC6,$jI%t+&');
+insert into usuarios_senhas (usuario, senha) values ('s', 'jC6,$jI%t+&');*/
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -467,11 +467,9 @@ SELECT * FROM hospedagens ORDER BY id_hospedagem;
 
 SELECT * FROM necessidades_hospede ORDER BY id_necessidade_hospede; 
 
-SELECT * FROM usuarios_senhas ORDER BY usuario;
+-- SELECT * FROM usuarios_senhas ORDER BY usuario;
 
 SELECT * FROM departamentos ORDER BY id_departamento;
-
-SELECT * FROM cargos ORDER BY id_cargo;
 
 SELECT * FROM funcionarios ORDER BY id_funcionario;
 
@@ -502,22 +500,14 @@ INNER JOIN quartos ON hospede_hospedagem.id_quarto = quartos.id_quarto;
 
 --------------------------------------------------------------------------------------------------------------------
 
-SELECT 
-       cargos.id_departamento
-FROM
-       cargos
-INNER JOIN departamentos ON cargos.id_departamento = departamentos.id_departamento;
-
---------------------------------------------------------------------------------------------------------------------
-
-SELECT 
+/*SELECT 
        funcionarios.primeiro_nome,
        funcionarios.id_cargo,
        funcionarios.usuario
 FROM 
        funcionarios
 INNER JOIN cargos ON funcionarios.id_cargo = cargos.id_cargo
-INNER JOIN usuarios_senhas ON funcionarios.usuario = usuarios_senhas.usuario;
+INNER JOIN usuarios_senhas ON funcionarios.usuario = usuarios_senhas.usuario;*/
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -650,7 +640,7 @@ SET SQL_SAFE_UPDATES = 1;
 
 --------------------------------------------------------------------------------------------------------------------
 
--- updates usuarios_senhas
+/*-- updates usuarios_senhas
 SET SQL_SAFE_UPDATES = 0;
 UPDATE usuarios_senhas SET senha = 'jdl/M<jf' WHERE usuario = 'a';
 UPDATE usuarios_senhas SET senha = 'h46fjhwk' WHERE usuario = 'b';
@@ -662,16 +652,7 @@ UPDATE usuarios_senhas SET senha = 'afdnvjgç' WHERE usuario = 'g';
 UPDATE usuarios_senhas SET senha = 'mcg45wge' WHERE usuario = 'h';
 UPDATE usuarios_senhas SET senha = 'yhwelkft' WHERE usuario = 'i';
 UPDATE usuarios_senhas SET senha = 'msnch39t' WHERE usuario = 'j'; 
-SET SQL_SAFE_UPDATES = 1;
-
---------------------------------------------------------------------------------------------------------------------
-
--- updates cargos
-SET SQL_SAFE_UPDATES = 0;
-UPDATE cargos SET nome_cargo = 'Camareira' WHERE id_cargo = 122;
-UPDATE cargos SET nome_cargo = 'Encanador' WHERE id_cargo = 133;
-UPDATE cargos SET nome_cargo = 'Recepcionista' WHERE id_cargo = 144;
-SET SQL_SAFE_UPDATES = 1;
+SET SQL_SAFE_UPDATES = 1;*/
 
 --------------------------------------------------------------------------------------------------------------------
 
