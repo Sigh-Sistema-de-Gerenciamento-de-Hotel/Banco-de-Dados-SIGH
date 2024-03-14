@@ -161,23 +161,23 @@ CREATE TABLE IF NOT EXISTS   `necessidades_hospede` (
 -- -----------------------------------------------------
 -- Table   `cargos`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS   `cargos` (
+/*CREATE TABLE IF NOT EXISTS   `cargos` (
   `id_cargo` INT NOT NULL,
   `nome_cargo` VARCHAR(45) NOT NULL,
   `id_departamento` INT NOT NULL,
   PRIMARY KEY (`id_cargo`),
   CONSTRAINT `fk_cargos_departamentos1`
     FOREIGN KEY (`id_departamento`)
-    REFERENCES   `departamentos` (`id_departamento`));
+    REFERENCES   `departamentos` (`id_departamento`));*/
 
 -- -----------------------------------------------------
 -- Table   `usuarios_senhas`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS   `usuarios_senhas` (
+/*CREATE TABLE IF NOT EXISTS   `usuarios_senhas` (
   `usuario` VARCHAR(45) NOT NULL,
   `senha` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`usuario`),
-  UNIQUE KEY unique_usuario(usuario));
+  UNIQUE KEY unique_usuario(usuario));*/
   
 -- -----------------------------------------------------
 -- Table   `funcionarios`
