@@ -18,6 +18,7 @@ USE sigh;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS   `enderecos` (
   `id_endereco` INT NOT NULL,
+  `cep` INT NOT NULL,
   `estado` VARCHAR(45) NOT NULL,
   `cidade` VARCHAR(45) NOT NULL,
   `endereco` VARCHAR(45) NOT NULL,
@@ -193,26 +194,26 @@ CREATE TABLE IF NOT EXISTS   `funcionarios` (
   PRIMARY KEY (`id_funcionario`));
 
 -- inserts enderecos 
-insert into enderecos (id_endereco, estado, cidade, endereco, complemento, numero) values (321, 'Geórgia', 'San Jose', 'PO Box 40575', null, 7253);
-insert into enderecos (id_endereco, estado, cidade, endereco, complemento, numero) values (716, 'santa Catarina', 'Whittttier', 'Suite 1', null, null);
-insert into enderecos (id_endereco, estado, cidade, endereco, complemento, numero) values (859, 'Callifornia', 'Palmdalee', 'om 206', 'Casa', 9351);
-insert into enderecos (id_endereco, estado, cidade, endereco, complemento, numero) values (756, 'Parana', 'San Diego', 'Room 152', 'Casa', 8368);
-insert into enderecos (id_endereco, estado, cidade, endereco, complemento, numero) values (117, 'São Paulo', 'Whittier', 'PO Box 59348', 'Casa', 8200);
-insert into enderecos (id_endereco, estado, cidade, endereco, complemento, numero) values (710, 'California', 'Santa Ana', 'PO Box 9725', 'Casa', 8770);
-insert into enderecos (id_endereco, estado, cidade, endereco, complemento, numero) values (937, 'Rio Grande do Sul', 'Santa Rosa', 'PO Box 92409', 'Casa', 7858);
-insert into enderecos (id_endereco, estado, cidade, endereco, complemento, numero) values (677, 'Texas', 'Los Angeles', 'PO Box 92328', 'casa', 3335);
-insert into enderecos (id_endereco, estado, cidade, endereco, complemento, numero) values (194, 'Flórida', 'Van Nuys', 'PO Box 65611', 'Casa', 8670);
-insert into enderecos (id_endereco, estado, cidade, endereco, complemento, numero) values (779, 'California', 'Fresno', '22nd Floor', 'Caasa', 6076);
-insert into enderecos (id_endereco, estado, cidade, endereco, complemento, numero) values (911, 'Rio de Janeiro', 'Corona', '3rd Floor', 'Casa', 9156);
-insert into enderecos (id_endereco, estado, cidade, endereco, complemento, numero) values (525, 'Rio de Janneiro', 'Santa Cruz', 'Apt 1345', 'casa', 9909);
-insert into enderecos (id_endereco, estado, cidade, endereco, complemento, numero) values (498, 'California', 'Long Beach', 'Apt 1009', 'Casa', 7464);
-insert into enderecos (id_endereco, estado, cidade, endereco, complemento, numero) values (892, 'São Paulo', 'Garden Grove', '9th Floor', 'Casa', 9056);
-insert into enderecos (id_endereco, estado, cidade, endereco, complemento, numero) values (366, 'São Paulo', 'San Rafael', 'PO Box 18784', 'Casa', 8144);
-insert into enderecos (id_endereco, estado, cidade, endereco, complemento, numero) values (873, 'Minas Gerais', 'Garden Grove', 'Suite 22', 'Casa', 5413);
-insert into enderecos (id_endereco, estado, cidade, endereco, complemento, numero) values (510, 'Colorado', 'Sannnta Barbara', 'Suite 812', 'Casa', 8627);
-insert into enderecos (id_endereco, estado, cidade, endereco, complemento, numero) values (642, 'Havai', 'Richmond', 'Suite 39', 'Cassa', 6414);
-insert into enderecos (id_endereco, estado, cidade, endereco, complemento, numero) values (324, 'Virginia', 'Simi Valley', 'Room 240', null, null);
-insert into enderecos (id_endereco, estado, cidade, endereco, complemento, numero) values (166, 'California', 'Long Beach', 'PO Box 73200', 'Casa', 2920);   
+insert into enderecos (id_endereco, cep, estado, cidade, endereco, complemento, numero) values (321, 12345, 'Geórgia', 'San Jose', 'PO Box 40575', null, 7253);
+insert into enderecos (id_endereco, cep, estado, cidade, endereco, complemento, numero) values (716, 5488820, 'santa Catarina', 'Whittttier', 'Suite 1', null, null);
+insert into enderecos (id_endereco, cep, estado, cidade, endereco, complemento, numero) values (859, 478, 'Callifornia', 'Palmdalee', 'om 206', 'Casa', 9351);
+insert into enderecos (id_endereco, cep, estado, cidade, endereco, complemento, numero) values (756, 852, 'Parana', 'San Diego', 'Room 152', 'Casa', 8368);
+insert into enderecos (id_endereco, cep, estado, cidade, endereco, complemento, numero) values (117, 165, 'São Paulo', 'Whittier', 'PO Box 59348', 'Casa', 8200);
+insert into enderecos (id_endereco, cep, estado, cidade, endereco, complemento, numero) values (710, 154,  'California', 'Santa Ana', 'PO Box 9725', 'Casa', 8770);
+insert into enderecos (id_endereco, cep, estado, cidade, endereco, complemento, numero) values (937, 154, 'Rio Grande do Sul', 'Santa Rosa', 'PO Box 92409', 'Casa', 7858);
+insert into enderecos (id_endereco, cep, estado, cidade, endereco, complemento, numero) values (677, 254, 'Texas', 'Los Angeles', 'PO Box 92328', 'casa', 3335);
+insert into enderecos (id_endereco, cep, estado, cidade, endereco, complemento, numero) values (194, 265,  'Flórida', 'Van Nuys', 'PO Box 65611', 'Casa', 8670);
+insert into enderecos (id_endereco, cep, estado, cidade, endereco, complemento, numero) values (779, 7894,  'California', 'Fresno', '22nd Floor', 'Caasa', 6076);
+insert into enderecos (id_endereco, cep, estado, cidade, endereco, complemento, numero) values (911, 222, 'Rio de Janeiro', 'Corona', '3rd Floor', 'Casa', 9156);
+insert into enderecos (id_endereco, cep, estado, cidade, endereco, complemento, numero) values (525, 745, 'Rio de Janneiro', 'Santa Cruz', 'Apt 1345', 'casa', 9909);
+insert into enderecos (id_endereco, cep, estado, cidade, endereco, complemento, numero) values (498, 0154, 'California', 'Long Beach', 'Apt 1009', 'Casa', 7464);
+insert into enderecos (id_endereco, cep, estado, cidade, endereco, complemento, numero) values (892, 5210, 'São Paulo', 'Garden Grove', '9th Floor', 'Casa', 9056);
+insert into enderecos (id_endereco, cep, estado, cidade, endereco, complemento, numero) values (366, 202165, 'São Paulo', 'San Rafael', 'PO Box 18784', 'Casa', 8144);
+insert into enderecos (id_endereco, cep, estado, cidade, endereco, complemento, numero) values (873, 65, 'Minas Gerais', 'Garden Grove', 'Suite 22', 'Casa', 5413);
+insert into enderecos (id_endereco, cep, estado, cidade, endereco, complemento, numero) values (510, 2156, 'Colorado', 'Sannnta Barbara', 'Suite 812', 'Casa', 8627);
+insert into enderecos (id_endereco, cep, estado, cidade, endereco, complemento, numero) values (642, 3265, 'Havai', 'Richmond', 'Suite 39', 'Cassa', 6414);
+insert into enderecos (id_endereco, cep, estado, cidade, endereco, complemento, numero) values (324, 02515641, 'Virginia', 'Simi Valley', 'Room 240', null, null);
+insert into enderecos (id_endereco, cep, estado, cidade, endereco, complemento, numero) values (166, 215610, 'California', 'Long Beach', 'PO Box 73200', 'Casa', 2920);   
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -439,11 +440,11 @@ SELECT COUNT(*) FROM hospedagens ;
 
 SELECT COUNT(*) FROM necessidades_hospede; 
 
-SELECT COUNT(*) FROM usuarios_senhas;
+/*SELECT COUNT(*) FROM usuarios_senhas;*/
 
 SELECT COUNT(*) FROM departamentos;
 
-SELECT COUNT(*) FROM cargos;
+/*SELECT COUNT(*) FROM cargos;*/
 
 SELECT COUNT(*) FROM funcionarios;
 
